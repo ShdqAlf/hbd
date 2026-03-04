@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #1a012e, #4b0082, #7b2cbf);
+    color: #ffffff;
+    height: 100vh;
+}
+
+.song {
+    visibility: hidden;
+}
+
+.container {
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    visibility: hidden;
+    width: 100vw;
+}
+
+.container > div {
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 20vh;
+}
+
+/* --- GLOBAL IMAGE STYLING --- */
+.image-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mika-image {
+    width: 250px;      
+    height: auto;
+    max-width: 100%;
+    filter: drop-shadow(0 0 15px rgba(224, 170, 255, 0.4));
+    transition: all 0.3s ease;
+}
+
+/* --- SECTION ONE & TWO --- */
+.one {
+    font-size: 4.5rem;
+    color: #e0aaff;
+    text-shadow: 0 0 10px rgba(224, 170, 255, 0.5);
+}
+
+.two {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    color: #bdb2ff;
+}
+
+.three {
+    font-size: 3rem;
+    color: #ff79c6;
+}
+
+/* --- SECTION FOUR (CHATBOX) --- */
+.four {
+    top: 7vh !important;
+}
+
+.four .text-box {
+    border: 4px solid #9d4edd;
+    border-radius: 15px;
+    margin: 0 auto;
+    padding: 25px;
+    position: relative;
+    width: 600px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.four .image-container {
+    margin-top: -20px;
+    z-index: 2;
+    position: relative;
+}
+
+.text-box p {
+    margin: 0;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.text-box span {
+    visibility: hidden;
+}
+
+/* --- SECTION FIVE (ADVICE) --- */
+.five {
+    top: 10vh !important;
+}
+
+.five > div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.five p {
+    font-size: 2.8rem;
+    font-weight: 700;
+    position: relative;
+    margin: 0 auto 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.idea-3 strong {
+    border-radius: 5px;
+    display: inline-block;
+    padding: 3px 15px;
+    background-color: #ff79c6;
+    color: #fff;
+}
+
+.five .idea-5 p {
+    font-size: 3rem;
+    width: 90%;
+    line-height: 1.2;
+    font-weight: bold;
+    color: #e0aaff;
+}
+
+.idea-5 span, .idea-6 span, .wish-hbd span {
+    display: inline-block;
+}
+
+.idea-6 span {
+    font-size: 12rem;
+    color: #c77dff;
+    font-weight: bold;
+}
+
+/* --- SECTION SIX (PROFILE - UPDATED) --- */
+.six {
+    position: relative;
+    top: 10vh;
+    z-index: 1;
+    display: inline-block; /* Agar container membungkus konten di tengah */
+}
+
+.six img.profile-picture {
+    display: block;
+    margin: 0 auto;
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid #9d4edd;
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.8);
+    position: relative;
+    z-index: 3;
+}
+
+/* Topi: Dibuat lebih mepet ke lingkaran foto */
+.six .hat {
+    position: absolute;
+    right: 40%;      /* Diperbesar agar lebih ke kiri (mepet foto) */
+    top: -10%;       /* Disesuaikan tingginya */
+    width: 100px;
+    z-index: 4;
+    transform: rotate(20deg);
+}
+
+/* Mika Kiri Atas: Dibuat masuk ke area foto */
+.mika-top-left {
+    position: absolute;
+    top: 5%;         /* Menjadi positif agar turun masuk ke area foto */
+    left: 30%;       /* Diperbesar agar lebih ke kanan (masuk ke foto) */
+    height: 150px;   /* Ukuran sedikit dikecilkan agar proporsional */
+    z-index: 5;      /* Pastikan di atas layer foto */
+    transform: rotate(-10deg);
+    filter: drop-shadow(0 0 15px rgba(224, 170, 255, 0.6));
+}
+
+/* Mika Kanan Bawah: Dibuat naik dan masuk ke area foto */
+.mika-bottom-right {
+    position: absolute;
+    bottom: 10%;      /* Nilai kecil agar tidak terlalu tinggi dari teks */
+    right: 35%;      /* Diperbesar agar lebih ke kiri (masuk ke area foto) */
+    height: 180px;
+    z-index: 5;      /* Pastikan di atas layer foto/teks */
+    transform: rotate(10deg);
+    filter: drop-shadow(0 0 15px rgba(224, 170, 255, 0.6));
+}
+
+/* --- BALLOONS & BACKGROUND --- */
+.baloons img {
+    display: inline-block;
+    position: absolute;
+    filter: hue-rotate(260deg) brightness(1.2);
+}
+
+.baloons img:nth-child(even) { left: -10%; }
+.baloons img:nth-child(odd) { right: -10%; }
+.baloons img:nth-child(3n + 0) { left: 30%; }
+
+.seven, .eight {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+.eight svg {
+    left: 0;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    width: 25px;
+    z-index: -1;
+}
+
+.eight svg:nth-child(1) { fill: #3c096c; left: 5vw; top: 7vh; }
+.eight svg:nth-child(2) { fill: #5a189a; left: 35vw; top: 23vh; }
+.eight svg:nth-child(3) { fill: #7b2cbf; left: 23vw; top: 33vh; }
+.eight svg:nth-child(4) { fill: #9d4edd; left: 57vw; top: 43vh; }
+.eight svg:nth-child(5) { fill: #c77dff; left: 7vw; top: 68vh; }
+.eight svg:nth-child(6) { fill: #e0aaff; left: 77vw; top: 42vh; }
+.eight svg:nth-child(7) { fill: #5a189a; left: 83vw; top: 68vh; }
+.eight svg:nth-child(8) { fill: #3c096c; left: 37vw; top: 86vh; }
+.eight svg:nth-child(9) { fill: #9d4edd; left: 87vw; top: 94vh; }
+
+/* --- WISHES & REPLAY --- */
+.wish-hbd {
+    font-size: 3.5em;
+    margin: 15px 0 0;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.wish h5 {
+    font-size: 2rem;
+    font-weight: lighter;
+    margin: 10px 0 0;
+    color: #e0aaff;
+}
+
+.nine p, .ten p {
+    font-size: 1.8rem;
+    font-weight: lighter;
+    padding: 0 20px;
+    line-height: 1.5;
+}
+
+/* Styling Voucher Card */
+.voucher-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.voucher-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px dashed #e0aaff;
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.voucher-label {
+    display: block;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: #ff79c6;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#replay1 {
+    font-family: 'Monaco', 'Courier New', monospace;
+    font-size: 2.2rem !important;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 5px;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(224, 170, 255, 0.8);
+}
+
+.voucher-card small {
+    color: #bdb2ff;
+    font-style: italic;
+}
+
+/* Mika Tablet Styling */
+.mika-image-tablet {
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(224, 170, 255, 0.5));
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+#replay {
+    cursor: pointer;
+    z-index: 10;
+    background: #9d4edd;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 15px;
+    font-family: monospace;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.ten {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.last-smile {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media screen and (max-width: 500px) {
+    .container > div { top: 15vh; }
+    .one { font-size: 2.5rem; }
+    
+    .four { top: 5vh !important; }
+    .four .mika-image { width: 160px; }
+    .four .text-box { width: 85%; padding: 15px; }
+    .text-box p { font-size: 0.9rem; }
+    
+    .five { top: 8vh !important; }
+    .five p { font-size: 1.8rem; }
+    .five .idea-5 p { font-size: 2rem; width: 85%; }
+    
+    .six img.profile-picture { height: 220px; width: 220px; }
+    .six .hat { right: 25%; width: 60px; top: -10%; }
+    
+    .mika-top-left, .mika-bottom-right { height: 110px; }
+    .mika-top-left { 
+            top: 5%; 
+            left: 5%; 
+        }
+    .mika-bottom-right { 
+            bottom: 25%; 
+            right: 10%; 
+        }
+
+    .wish-hbd { font-size: 2.2em; }
+    .idea-6 span { font-size: 6rem; }
+    .nine p, .ten p { font-size: 1.2rem; }
+
+    #replay1 {
+        font-size: 1.2rem !important;
+        letter-spacing: 2px;
+    }
+    .voucher-card {
+        padding: 15px 20px;
+        width: 80%;
+    }
+    .mika-image-tablet {
+        width: 150px;
+    }
+}
